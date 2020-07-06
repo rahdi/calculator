@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Kalkulator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-2"></div>
+      <div class="col-8 bg-primary border border-dark rounded mt-2 pt-2 pb-2">
+        <div class="row bg-light border border-dark rounded mx-1 my-1 py-2"><span id="screen">0</span></div>
+        <div class="row mx-1 my-1">
+          <div class="col mx-1 btn btn-dark">MC</div>
+          <div class="col mx-1 btn btn-dark">MR</div>
+          <div class="col mx-1 btn btn-dark">MS</div>
+          <div class="col mx-1 btn btn-dark">←</div>
+          <div class="col mx-1 btn btn-dark">±</div>
+          <div class="col mx-1 btn btn-dark">√</div>
+        </div>
+        <div class="row mx-1 my-1">
+          <div class="col mx-1 btn btn-dark">M+</div>
+          <div class="col mx-1 btn btn-secondary border-dark" id="btn-7">7</div>
+          <div class="col mx-1 btn btn-secondary border-dark" id="btn-8">8</div>
+          <div class="col mx-1 btn btn-secondary border-dark" id="btn-9">9</div>
+          <div class="col mx-1 btn btn-dark">/</div>
+          <div class="col mx-1 btn btn-dark">%</div>
+        </div>
+        <div class="row mx-1 my-1">
+          <div class="col mx-1 btn btn-dark">M-</div>
+          <div class="col mx-1 btn btn-secondary border-dark" id="btn-4">4</div>
+          <div class="col mx-1 btn btn-secondary border-dark" id="btn-5">5</div>
+          <div class="col mx-1 btn btn-secondary border-dark" id="btn-6">6</div>
+          <div class="col mx-1 btn btn-dark" id="btn-minus">-</div>
+          <div class="col mx-1 btn btn-dark">x</div>
+        </div>
+        <div class="row mx-1">
+          <div class="col-8">
+            <div class="row">
+              <div class="col mx-1 btn btn-danger border-dark">CE</div>
+              <div class="col mx-1 btn btn-secondary border-dark" id="btn-1">1</div>
+              <div class="col mx-1 btn btn-secondary border-dark" id="btn-2">2</div>
+              <div class="col mx-1 btn btn-secondary border-dark" id="btn-3">3</div>
+            </div>
+            <div class="row mt-1">
+              <div class="col mx-1 btn btn-danger border-dark">C</div>
+              <div class="col mx-1 btn btn-secondary border-dark" id="btn-0">0</div>
+              <div class="col mx-1 btn btn-secondary border-dark">00</div>
+              <div class="col mx-1 btn btn-secondary border-dark">,</div>
+            </div>
+          </div>
+          <div class="col btn btn-dark mx-1" id="btn-plus">+</div>
+          <div class="col btn btn-dark mx-1" id="btn-result">=</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-2"></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
