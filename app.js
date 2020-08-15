@@ -346,4 +346,35 @@ btnMinus.onmouseup = function() {
   console.log("buttonsUsed: "+buttonsUsed);
 }
 
-//console.log(screen.childNodes[0]);
+// CE
+let btnCE = document.getElementById("btn-ce");
+btnCE.onmouseup = function() {
+  currentValue = "0";
+  screen.textContent = 0;
+  result = 0;
+
+  buttonsUsed += "[CE]";
+  console.clear();
+  console.log("screen.textContent: "+screen.textContent);
+  console.log("currentValue: "+currentValue);
+  console.log("currentExpression: "+currentExpression);
+  console.log("result: "+result);
+  console.log("buttonsUsed: "+buttonsUsed);
+}
+
+// C
+let btnC = document.getElementById("btn-c");
+btnC.onmouseup = function() {
+  currentValue = "0";
+  screen.textContent = 0;
+  result = 0;
+  currentExpression = 0;
+
+  buttonsUsed += "[CE]";
+  console.clear();
+  console.log("screen.textContent: "+screen.textContent);
+  console.log("currentValue: "+currentValue);
+  console.log("currentExpression: "+currentExpression);
+  console.log("result: "+result);
+  console.log("buttonsUsed: "+buttonsUsed);
+}
