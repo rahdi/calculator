@@ -1,34 +1,44 @@
-console.log("działa");
-
 let screen = document.getElementById("screen");
-let currentValue = "";
-let currentExpression = 0;
+
+//First value in expression
+let firstValue = "";
+
+//Value, that is used as a second part of expression
+let usedValue = 0;
+
+//Current result
 let result = 0;
-let lastButtonExpression = "";
+
+//Currently used expression
+let currentExpression = "";
+
+//Additional variables
 let lastButtonResult = false;
 let lastButtonNumber = false;
+
+//Only to check errors
 let buttonsUsed ="";
 
 // 1
 let btn1 = document.getElementById("btn-1");
 btn1.onmouseup = function() {
   if (lastButtonNumber === false) {
-    currentValue = "";
+    firstValue = "";
     if (lastButtonResult === true) {
-      currentExpression = 0;
-      lastButtonExpression = "";
+      usedValue = 0;
+      currentExpression = "";
     }
   }
-  screen.textContent = currentValue+"1";
-  currentValue += "1";
+  screen.textContent = firstValue+"1";
+  firstValue += "1";
   lastButtonResult = false;
   lastButtonNumber = true;
 
   buttonsUsed += "1";
   console.clear();
   console.log("screen.textContent: "+screen.textContent);
-  console.log("currentValue: "+currentValue);
-  console.log("currentExpression: "+currentExpression);
+  console.log("firstValue: "+firstValue);
+  console.log("usedValue: "+usedValue);
   console.log("result: "+result);
   console.log("buttonsUsed: "+buttonsUsed);
 };
@@ -37,22 +47,22 @@ btn1.onmouseup = function() {
 let btn2 = document.getElementById("btn-2");
 btn2.onmouseup = function() {
   if (lastButtonNumber === false) {
-    currentValue = "";
+    firstValue = "";
     if (lastButtonResult === true) {
-      currentExpression = 0;
-      lastButtonExpression = "";
+      usedValue = 0;
+      currentExpression = "";
     }
   }
-  screen.textContent = currentValue+"2";
-  currentValue += "2";
+  screen.textContent = firstValue+"2";
+  firstValue += "2";
   lastButtonResult = false;
   lastButtonNumber = true;
 
   buttonsUsed += "2";
   console.clear();
   console.log("screen.textContent: "+screen.textContent);
-  console.log("currentValue: "+currentValue);
-  console.log("currentExpression: "+currentExpression);
+  console.log("firstValue: "+firstValue);
+  console.log("usedValue: "+usedValue);
   console.log("result: "+result);
   console.log("buttonsUsed: "+buttonsUsed);
 };
@@ -61,22 +71,22 @@ btn2.onmouseup = function() {
 let btn3 = document.getElementById("btn-3");
 btn3.onmouseup = function() {
   if (lastButtonNumber === false) {
-    currentValue = "";
+    firstValue = "";
     if (lastButtonResult === true) {
-      currentExpression = 0;
-      lastButtonExpression = "";
+      usedValue = 0;
+      currentExpression = "";
     }
   }
-  screen.textContent = currentValue+"3";
-  currentValue += "3";
+  screen.textContent = firstValue+"3";
+  firstValue += "3";
   lastButtonResult = false;
   lastButtonNumber = true;
 
   buttonsUsed += "3";
   console.clear();
   console.log("screen.textContent: "+screen.textContent);
-  console.log("currentValue: "+currentValue);
-  console.log("currentExpression: "+currentExpression);
+  console.log("firstValue: "+firstValue);
+  console.log("usedValue: "+usedValue);
   console.log("result: "+result);
   console.log("buttonsUsed: "+buttonsUsed);
 };
@@ -85,22 +95,22 @@ btn3.onmouseup = function() {
 let btn4 = document.getElementById("btn-4");
 btn4.onmouseup = function() {
   if (lastButtonNumber === false) {
-    currentValue = "";
+    firstValue = "";
     if (lastButtonResult === true) {
-      currentExpression = 0;
-      lastButtonExpression = "";
+      usedValue = 0;
+      currentExpression = "";
     }
   }
-  screen.textContent = currentValue+"4";
-  currentValue += "4";
+  screen.textContent = firstValue+"4";
+  firstValue += "4";
   lastButtonResult = false;
   lastButtonNumber = true;
 
   buttonsUsed += "4";
   console.clear();
   console.log("screen.textContent: "+screen.textContent);
-  console.log("currentValue: "+currentValue);
-  console.log("currentExpression: "+currentExpression);
+  console.log("firstValue: "+firstValue);
+  console.log("usedValue: "+usedValue);
   console.log("result: "+result);
   console.log("buttonsUsed: "+buttonsUsed);
 };
@@ -109,22 +119,22 @@ btn4.onmouseup = function() {
 let btn5 = document.getElementById("btn-5");
 btn5.onmouseup = function() {
   if (lastButtonNumber === false) {
-    currentValue = "";
+    firstValue = "";
     if (lastButtonResult === true) {
-      currentExpression = 0;
-      lastButtonExpression = "";
+      usedValue = 0;
+      currentExpression = "";
     }
   }
-  screen.textContent = currentValue+"5";
-  currentValue += "5";
+  screen.textContent = firstValue+"5";
+  firstValue += "5";
   lastButtonResult = false;
   lastButtonNumber = true;
 
   buttonsUsed += "5";
   console.clear();
   console.log("screen.textContent: "+screen.textContent);
-  console.log("currentValue: "+currentValue);
-  console.log("currentExpression: "+currentExpression);
+  console.log("firstValue: "+firstValue);
+  console.log("usedValue: "+usedValue);
   console.log("result: "+result);
   console.log("buttonsUsed: "+buttonsUsed);
 };
@@ -133,22 +143,22 @@ btn5.onmouseup = function() {
 let btn6 = document.getElementById("btn-6");
 btn6.onmouseup = function() {
   if (lastButtonNumber === false) {
-    currentValue = "";
+    firstValue = "";
     if (lastButtonResult === true) {
-      currentExpression = 0;
-      lastButtonExpression = "";
+      usedValue = 0;
+      currentExpression = "";
     }
   }
-  screen.textContent = currentValue+"6";
-  currentValue += "6";
+  screen.textContent = firstValue+"6";
+  firstValue += "6";
   lastButtonResult = false;
   lastButtonNumber = true;
 
   buttonsUsed += "6";
   console.clear();
   console.log("screen.textContent: "+screen.textContent);
-  console.log("currentValue: "+currentValue);
-  console.log("currentExpression: "+currentExpression);
+  console.log("firstValue: "+firstValue);
+  console.log("usedValue: "+usedValue);
   console.log("result: "+result);
   console.log("buttonsUsed: "+buttonsUsed);
 };
@@ -157,22 +167,22 @@ btn6.onmouseup = function() {
 let btn7 = document.getElementById("btn-7");
 btn7.onmouseup = function() {
   if (lastButtonNumber === false) {
-    currentValue = "";
+    firstValue = "";
     if (lastButtonResult === true) {
-      currentExpression = 0;
-      lastButtonExpression = "";
+      usedValue = 0;
+      currentExpression = "";
     }
   }
-  screen.textContent = currentValue+"7";
-  currentValue += "7";
+  screen.textContent = firstValue+"7";
+  firstValue += "7";
   lastButtonResult = false;
   lastButtonNumber = true;
 
   buttonsUsed += "7";
   console.clear();
   console.log("screen.textContent: "+screen.textContent);
-  console.log("currentValue: "+currentValue);
-  console.log("currentExpression: "+currentExpression);
+  console.log("firstValue: "+firstValue);
+  console.log("usedValue: "+usedValue);
   console.log("result: "+result);
   console.log("buttonsUsed: "+buttonsUsed);
 };
@@ -181,22 +191,22 @@ btn7.onmouseup = function() {
 let btn8 = document.getElementById("btn-8");
 btn8.onmouseup = function() {
   if (lastButtonNumber === false) {
-    currentValue = "";
+    firstValue = "";
     if (lastButtonResult === true) {
-      currentExpression = 0;
-      lastButtonExpression = "";
+      usedValue = 0;
+      currentExpression = "";
     }
   }
-  screen.textContent = currentValue+"8";
-  currentValue += "8";
+  screen.textContent = firstValue+"8";
+  firstValue += "8";
   lastButtonResult = false;
   lastButtonNumber = true;
 
   buttonsUsed += "8";
   console.clear();
   console.log("screen.textContent: "+screen.textContent);
-  console.log("currentValue: "+currentValue);
-  console.log("currentExpression: "+currentExpression);
+  console.log("firstValue: "+firstValue);
+  console.log("usedValue: "+usedValue);
   console.log("result: "+result);
   console.log("buttonsUsed: "+buttonsUsed);
 };
@@ -205,22 +215,22 @@ btn8.onmouseup = function() {
 let btn9 = document.getElementById("btn-9");
 btn9.onmouseup = function() {
   if (lastButtonNumber === false) {
-    currentValue = "";
+    firstValue = "";
     if (lastButtonResult === true) {
-      currentExpression = 0;
-      lastButtonExpression = "";
+      usedValue = 0;
+      currentExpression = "";
     }
   }
-  screen.textContent = currentValue+"9";
-  currentValue += "9";
+  screen.textContent = firstValue+"9";
+  firstValue += "9";
   lastButtonResult = false;
   lastButtonNumber = true;
 
   buttonsUsed += "9";
   console.clear();
   console.log("screen.textContent: "+screen.textContent);
-  console.log("currentValue: "+currentValue);
-  console.log("currentExpression: "+currentExpression);
+  console.log("firstValue: "+firstValue);
+  console.log("usedValue: "+usedValue);
   console.log("result: "+result);
   console.log("buttonsUsed: "+buttonsUsed);
 };
@@ -229,22 +239,22 @@ btn9.onmouseup = function() {
 let btn0 = document.getElementById("btn-0");
 btn0.onmouseup = function() {
   if (lastButtonNumber === false) {
-    currentValue = "";
+    firstValue = "";
     if (lastButtonResult === true) {
-      currentExpression = 0;
-      lastButtonExpression = "";
+      usedValue = 0;
+      currentExpression = "";
     }
   }
-  screen.textContent = currentValue+"0";
-  currentValue += "0";
+  screen.textContent = firstValue+"0";
+  firstValue += "0";
   lastButtonResult = false;
   lastButtonNumber = true;
 
   buttonsUsed += "0";
   console.clear();
   console.log("screen.textContent: "+screen.textContent);
-  console.log("currentValue: "+currentValue);
-  console.log("currentExpression: "+currentExpression);
+  console.log("firstValue: "+firstValue);
+  console.log("usedValue: "+usedValue);
   console.log("result: "+result);
   console.log("buttonsUsed: "+buttonsUsed);
 };
@@ -252,31 +262,31 @@ btn0.onmouseup = function() {
 // =
 let btnResult = document.getElementById("btn-result");
 btnResult.onmouseup = function() {
-  switch(lastButtonExpression) {
+  switch(currentExpression) {
     case "btnPlus":
       if (lastButtonResult === true) {
-        result += currentExpression;
+        result += usedValue;
       } 
       else if (lastButtonNumber === true) {
-        currentValue = currentExpression;
-        currentExpression = Number(screen.textContent);
-        result = currentValue + currentExpression;
+        firstValue = usedValue;
+        usedValue = Number(screen.textContent);
+        result = firstValue + usedValue;
       } 
       else {
-        result = Number(screen.textContent) + currentExpression;
+        result = Number(screen.textContent) + usedValue;
       }
     break;
     case "btnMinus":
       if (lastButtonResult === true) {
-        result -= currentExpression;
+        result -= usedValue;
       } 
       else if (lastButtonNumber === true) {
-        currentValue = currentExpression;
-        currentExpression = Number(screen.textContent);
-        result = currentValue - currentExpression;
+        firstValue = usedValue;
+        usedValue = Number(screen.textContent);
+        result = firstValue - usedValue;
       } 
       else {
-        result = Number(screen.textContent) - currentExpression;
+        result = Number(screen.textContent) - usedValue;
       }
     break;
     default:
@@ -290,8 +300,8 @@ btnResult.onmouseup = function() {
   buttonsUsed += "=";
   console.clear();
   console.log("screen.textContent: "+screen.textContent);
-  console.log("currentValue: "+currentValue);
-  console.log("currentExpression: "+currentExpression);
+  console.log("firstValue: "+firstValue);
+  console.log("usedValue: "+usedValue);
   console.log("result: "+result);
   console.log("buttonsUsed: "+buttonsUsed);
 }
@@ -300,22 +310,22 @@ btnResult.onmouseup = function() {
 let btnPlus = document.getElementById("btn-plus");
 btnPlus.onmouseup = function() {
   if (lastButtonResult === true || lastButtonNumber === false) {
-    currentExpression = Number(screen.textContent);
-  } else if (lastButtonExpression === "btnMinus") {
-    currentExpression -= Number(currentValue);
+    usedValue = Number(screen.textContent);
+  } else if (currentExpression === "btnMinus") {
+    usedValue -= Number(firstValue);
   } else {
-    currentExpression += Number(currentValue);
+    usedValue += Number(firstValue);
   }
-  screen.textContent = currentExpression;
-  lastButtonExpression = "btnPlus";
+  screen.textContent = usedValue;
+  currentExpression = "btnPlus";
   lastButtonResult = false;
   lastButtonNumber = false;
 
   buttonsUsed += "+";
   console.clear();
   console.log("screen.textContent: "+screen.textContent);
-  console.log("currentValue: "+currentValue);
-  console.log("currentExpression: "+currentExpression);
+  console.log("firstValue: "+firstValue);
+  console.log("usedValue: "+usedValue);
   console.log("result: "+result);
   console.log("buttonsUsed: "+buttonsUsed);
 }
@@ -324,24 +334,24 @@ btnPlus.onmouseup = function() {
 let btnMinus = document.getElementById("btn-minus");
 btnMinus.onmouseup = function() {
   if (lastButtonResult === true || lastButtonNumber === false) {
-    currentExpression = Number(screen.textContent);
-  } else if (currentExpression === 0 && lastButtonNumber === true) {
-    currentExpression = Number(currentValue);
-  } else if (lastButtonExpression === "btnPlus") {
-    currentExpression += Number(currentValue);
+    usedValue = Number(screen.textContent);
+  } else if (usedValue === 0 && lastButtonNumber === true) {
+    usedValue = Number(firstValue);
+  } else if (currentExpression === "btnPlus") {
+    usedValue += Number(firstValue);
   } else {
-    currentExpression -= Number(currentValue);
+    usedValue -= Number(firstValue);
   }
-  screen.textContent = currentExpression;
-  lastButtonExpression = "btnMinus";
+  screen.textContent = usedValue;
+  currentExpression = "btnMinus";
   lastButtonResult = false;
   lastButtonNumber = false;
 
   buttonsUsed += "-";
   console.clear();
   console.log("screen.textContent: "+screen.textContent);
-  console.log("currentValue: "+currentValue);
-  console.log("currentExpression: "+currentExpression);
+  console.log("firstValue: "+firstValue);
+  console.log("usedValue: "+usedValue);
   console.log("result: "+result);
   console.log("buttonsUsed: "+buttonsUsed);
 }
@@ -349,15 +359,15 @@ btnMinus.onmouseup = function() {
 // CE
 let btnCE = document.getElementById("btn-ce");
 btnCE.onmouseup = function() {
-  currentValue = "0";
+  firstValue = "0";
   screen.textContent = 0;
   result = 0;
 
   buttonsUsed += "[CE]";
   console.clear();
   console.log("screen.textContent: "+screen.textContent);
-  console.log("currentValue: "+currentValue);
-  console.log("currentExpression: "+currentExpression);
+  console.log("firstValue: "+firstValue);
+  console.log("usedValue: "+usedValue);
   console.log("result: "+result);
   console.log("buttonsUsed: "+buttonsUsed);
 }
@@ -365,16 +375,16 @@ btnCE.onmouseup = function() {
 // C
 let btnC = document.getElementById("btn-c");
 btnC.onmouseup = function() {
-  currentValue = "0";
+  firstValue = "0";
   screen.textContent = 0;
   result = 0;
-  currentExpression = 0;
+  usedValue = 0;
 
-  buttonsUsed += "[CE]";
+  buttonsUsed += "[C]";
   console.clear();
   console.log("screen.textContent: "+screen.textContent);
-  console.log("currentValue: "+currentValue);
-  console.log("currentExpression: "+currentExpression);
+  console.log("firstValue: "+firstValue);
+  console.log("usedValue: "+usedValue);
   console.log("result: "+result);
   console.log("buttonsUsed: "+buttonsUsed);
 }
