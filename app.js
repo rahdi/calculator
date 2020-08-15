@@ -20,7 +20,7 @@ let lastButtonCE = false;
 //Only to check errors
 let buttonsUsed ="";
 
-// 1
+// Button [1]
 let btn1 = document.getElementById("btn-1");
 btn1.onmouseup = function() {
   if (lastButtonNumber === false) {
@@ -44,7 +44,7 @@ btn1.onmouseup = function() {
   console.log("buttonsUsed: "+buttonsUsed);
 };
 
-// 2
+// Button [2]
 let btn2 = document.getElementById("btn-2");
 btn2.onmouseup = function() {
   if (lastButtonNumber === false) {
@@ -68,7 +68,7 @@ btn2.onmouseup = function() {
   console.log("buttonsUsed: "+buttonsUsed);
 };
 
-// 3
+// Button [3]
 let btn3 = document.getElementById("btn-3");
 btn3.onmouseup = function() {
   if (lastButtonNumber === false) {
@@ -92,7 +92,7 @@ btn3.onmouseup = function() {
   console.log("buttonsUsed: "+buttonsUsed);
 };
 
-// 4
+// Button [4]
 let btn4 = document.getElementById("btn-4");
 btn4.onmouseup = function() {
   if (lastButtonNumber === false) {
@@ -116,7 +116,7 @@ btn4.onmouseup = function() {
   console.log("buttonsUsed: "+buttonsUsed);
 };
 
-// 5
+// Button [5]
 let btn5 = document.getElementById("btn-5");
 btn5.onmouseup = function() {
   if (lastButtonNumber === false) {
@@ -140,7 +140,7 @@ btn5.onmouseup = function() {
   console.log("buttonsUsed: "+buttonsUsed);
 };
 
-// 6
+// Button [6]
 let btn6 = document.getElementById("btn-6");
 btn6.onmouseup = function() {
   if (lastButtonNumber === false) {
@@ -164,7 +164,7 @@ btn6.onmouseup = function() {
   console.log("buttonsUsed: "+buttonsUsed);
 };
 
-// 7
+// Button [7]
 let btn7 = document.getElementById("btn-7");
 btn7.onmouseup = function() {
   if (lastButtonNumber === false) {
@@ -188,7 +188,7 @@ btn7.onmouseup = function() {
   console.log("buttonsUsed: "+buttonsUsed);
 };
 
-// 8
+// Button [8]
 let btn8 = document.getElementById("btn-8");
 btn8.onmouseup = function() {
   if (lastButtonNumber === false) {
@@ -212,7 +212,7 @@ btn8.onmouseup = function() {
   console.log("buttonsUsed: "+buttonsUsed);
 };
 
-// 9
+// Button [9]
 let btn9 = document.getElementById("btn-9");
 btn9.onmouseup = function() {
   if (lastButtonNumber === false) {
@@ -236,7 +236,7 @@ btn9.onmouseup = function() {
   console.log("buttonsUsed: "+buttonsUsed);
 };
 
-// 0
+// Button [0]
 let btn0 = document.getElementById("btn-0");
 btn0.onmouseup = function() {
   if (lastButtonNumber === false) {
@@ -260,7 +260,7 @@ btn0.onmouseup = function() {
   console.log("buttonsUsed: "+buttonsUsed);
 };
 
-// =
+// Button [=] Result
 let btnResult = document.getElementById("btn-result");
 btnResult.onmouseup = function() {
   switch(currentExpression) {
@@ -303,6 +303,19 @@ btnResult.onmouseup = function() {
         result = Number(screen.textContent) * usedValue;
       }
     break;
+    case "btnDivision":
+      if (lastButtonResult === true) {
+        result /= usedValue;
+      } 
+      else if (lastButtonNumber === true && lastButtonCE === false) {
+        firstValue = usedValue;
+        usedValue = Number(screen.textContent);
+        result = firstValue / usedValue;
+      } 
+      else {
+        result = Number(screen.textContent) / usedValue;
+      }
+    break;
     default:
       result = Number(screen.textContent);
     break;
@@ -320,7 +333,7 @@ btnResult.onmouseup = function() {
   console.log("buttonsUsed: "+buttonsUsed);
 }
 
-// +
+// Button [+] Addition
 let btnPlus = document.getElementById("btn-plus");
 btnPlus.onmouseup = function() {
   if (lastButtonResult === true || lastButtonNumber === false) {
@@ -329,6 +342,8 @@ btnPlus.onmouseup = function() {
     usedValue -= Number(firstValue);
   } else if (currentExpression === "btnX") {
     usedValue *= Number(firstValue);
+  } else if (currentExpression === "btnDivision") {
+    usedValue /= Number(firstValue);
   } else {
     usedValue += Number(firstValue);
   }
@@ -347,7 +362,7 @@ btnPlus.onmouseup = function() {
   console.log("buttonsUsed: "+buttonsUsed);
 }
 
-// -
+// Button [-] Subtraction
 let btnMinus = document.getElementById("btn-minus");
 btnMinus.onmouseup = function() {
   if (lastButtonResult === true || lastButtonNumber === false) {
@@ -358,6 +373,8 @@ btnMinus.onmouseup = function() {
     usedValue += Number(firstValue);
   } else if (currentExpression === "btnX") {
     usedValue *= Number(firstValue);
+  } else if (currentExpression === "btnDivision") {
+    usedValue /= Number(firstValue);
   } else {
     usedValue -= Number(firstValue);
   }
@@ -376,7 +393,7 @@ btnMinus.onmouseup = function() {
   console.log("buttonsUsed: "+buttonsUsed);
 }
 
-// x
+// Button [x] Multiplication
 let btnX = document.getElementById("btn-x");
 btnX.onmouseup = function() {
   if (lastButtonResult === true || lastButtonNumber === false) {
@@ -387,6 +404,8 @@ btnX.onmouseup = function() {
     usedValue -= Number(firstValue);
   } else if (currentExpression === "btnPlus") {
     usedValue += Number(firstValue);
+  } else if (currentExpression === "btnDivision") {
+    usedValue /= Number(firstValue);
   } else {
     usedValue *= (Number(firstValue));
   }
@@ -405,7 +424,38 @@ btnX.onmouseup = function() {
   console.log("buttonsUsed: "+buttonsUsed);
 }
 
-// CE
+// Button [/] Division
+let btnDivision = document.getElementById("btn-division");
+btnDivision.onmouseup = function() {
+  if (lastButtonResult === true || lastButtonNumber === false) {
+    usedValue = Number(screen.textContent);
+  } else if (usedValue === 0 && lastButtonNumber === true) {
+    usedValue = Number(firstValue);
+  } else if (currentExpression === "btnMinus") {
+    usedValue -= Number(firstValue);
+  } else if (currentExpression === "btnPlus") {
+    usedValue += Number(firstValue);
+  } else if (currentExpression === "btnX") {
+    usedValue *= Number(firstValue);
+  } else {
+    usedValue /= (Number(firstValue));
+  }
+  screen.textContent = usedValue;
+  currentExpression = "btnDivision";
+  lastButtonResult = false;
+  lastButtonNumber = false;
+  lastButtonCE = false;
+
+  buttonsUsed += "/";
+  console.clear();
+  console.log("screen.textContent: "+screen.textContent);
+  console.log("firstValue: "+firstValue);
+  console.log("usedValue: "+usedValue);
+  console.log("result: "+result);
+  console.log("buttonsUsed: "+buttonsUsed);
+}
+
+// Button [CE] Clear entry
 let btnCE = document.getElementById("btn-ce");
 btnCE.onmouseup = function() {
   firstValue = "0";
@@ -422,7 +472,7 @@ btnCE.onmouseup = function() {
   console.log("buttonsUsed: "+buttonsUsed);
 }
 
-// C
+// Button [C] Clear all
 let btnC = document.getElementById("btn-c");
 btnC.onmouseup = function() {
   firstValue = "0";
