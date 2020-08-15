@@ -1,3 +1,6 @@
+//TODO: functionality of CE, the result should stay, when any expression button is pressed after CE.
+//TODO: %, sqrt, +-, arrow, memory.
+
 let screen = document.getElementById("screen");
 
 //First value in expression
@@ -15,6 +18,7 @@ let currentExpression = "";
 //Additional variables
 let lastButtonResult = false;
 let lastButtonNumber = false;
+let resetUsedValue = true;
 let lastButtonCE = false;
 
 //Only to check errors
@@ -25,7 +29,7 @@ let btn1 = document.getElementById("btn-1");
 btn1.onmouseup = function() {
   if (lastButtonNumber === false) {
     firstValue = "";
-    if (lastButtonResult === true && lastButtonCE === false) {
+    if (lastButtonResult === true && resetUsedValue === true) {
       usedValue = 0;
       currentExpression = "";
     }
@@ -49,7 +53,7 @@ let btn2 = document.getElementById("btn-2");
 btn2.onmouseup = function() {
   if (lastButtonNumber === false) {
     firstValue = "";
-    if (lastButtonResult === true && lastButtonCE === false) {
+    if (lastButtonResult === true && resetUsedValue === true) {
       usedValue = 0;
       currentExpression = "";
     }
@@ -73,7 +77,7 @@ let btn3 = document.getElementById("btn-3");
 btn3.onmouseup = function() {
   if (lastButtonNumber === false) {
     firstValue = "";
-    if (lastButtonResult === true && lastButtonCE === false) {
+    if (lastButtonResult === true && resetUsedValue === true) {
       usedValue = 0;
       currentExpression = "";
     }
@@ -97,7 +101,7 @@ let btn4 = document.getElementById("btn-4");
 btn4.onmouseup = function() {
   if (lastButtonNumber === false) {
     firstValue = "";
-    if (lastButtonResult === true && lastButtonCE === false) {
+    if (lastButtonResult === true && resetUsedValue === true) {
       usedValue = 0;
       currentExpression = "";
     }
@@ -121,7 +125,7 @@ let btn5 = document.getElementById("btn-5");
 btn5.onmouseup = function() {
   if (lastButtonNumber === false) {
     firstValue = "";
-    if (lastButtonResult === true && lastButtonCE === false) {
+    if (lastButtonResult === true && resetUsedValue === true) {
       usedValue = 0;
       currentExpression = "";
     }
@@ -145,7 +149,7 @@ let btn6 = document.getElementById("btn-6");
 btn6.onmouseup = function() {
   if (lastButtonNumber === false) {
     firstValue = "";
-    if (lastButtonResult === true && lastButtonCE === false) {
+    if (lastButtonResult === true && resetUsedValue === true) {
       usedValue = 0;
       currentExpression = "";
     }
@@ -169,7 +173,7 @@ let btn7 = document.getElementById("btn-7");
 btn7.onmouseup = function() {
   if (lastButtonNumber === false) {
     firstValue = "";
-    if (lastButtonResult === true && lastButtonCE === false) {
+    if (lastButtonResult === true && resetUsedValue === true) {
       usedValue = 0;
       currentExpression = "";
     }
@@ -193,7 +197,7 @@ let btn8 = document.getElementById("btn-8");
 btn8.onmouseup = function() {
   if (lastButtonNumber === false) {
     firstValue = "";
-    if (lastButtonResult === true && lastButtonCE === false) {
+    if (lastButtonResult === true && resetUsedValue === true) {
       usedValue = 0;
       currentExpression = "";
     }
@@ -217,7 +221,7 @@ let btn9 = document.getElementById("btn-9");
 btn9.onmouseup = function() {
   if (lastButtonNumber === false) {
     firstValue = "";
-    if (lastButtonResult === true && lastButtonCE === false) {
+    if (lastButtonResult === true && resetUsedValue === true) {
       usedValue = 0;
       currentExpression = "";
     }
@@ -241,7 +245,7 @@ let btn0 = document.getElementById("btn-0");
 btn0.onmouseup = function() {
   if (lastButtonNumber === false) {
     firstValue = "";
-    if (lastButtonResult === true && lastButtonCE === false) {
+    if (lastButtonResult === true && resetUsedValue === true) {
       usedValue = 0;
       currentExpression = "";
     }
@@ -268,7 +272,7 @@ btnResult.onmouseup = function() {
       if (lastButtonResult === true) {
         result += usedValue;
       } 
-      else if (lastButtonNumber === true && lastButtonCE === false) {
+      else if (lastButtonNumber === true && (resetUsedValue === true || lastButtonCE === true)) {
         firstValue = usedValue;
         usedValue = Number(screen.textContent);
         result = firstValue + usedValue;
@@ -281,7 +285,7 @@ btnResult.onmouseup = function() {
       if (lastButtonResult === true) {
         result -= usedValue;
       } 
-      else if (lastButtonNumber === true && lastButtonCE === false) {
+      else if (lastButtonNumber === true && (resetUsedValue === true || lastButtonCE === true)) {
         firstValue = usedValue;
         usedValue = Number(screen.textContent);
         result = firstValue - usedValue;
@@ -294,7 +298,7 @@ btnResult.onmouseup = function() {
       if (lastButtonResult === true) {
         result *= usedValue;
       } 
-      else if (lastButtonNumber === true && lastButtonCE === false) {
+      else if (lastButtonNumber === true && (resetUsedValue === true || lastButtonCE === true)) {
         firstValue = usedValue;
         usedValue = Number(screen.textContent);
         result = firstValue * usedValue;
@@ -307,7 +311,7 @@ btnResult.onmouseup = function() {
       if (lastButtonResult === true) {
         result /= usedValue;
       } 
-      else if (lastButtonNumber === true && lastButtonCE === false) {
+      else if (lastButtonNumber === true && (resetUsedValue === true || lastButtonCE === true)) {
         firstValue = usedValue;
         usedValue = Number(screen.textContent);
         result = firstValue / usedValue;
@@ -323,6 +327,7 @@ btnResult.onmouseup = function() {
   screen.textContent = result;
   lastButtonResult = true;
   lastButtonNumber = false;
+  resetUsedValue = false;
 
   buttonsUsed += "=";
   console.clear();
@@ -336,8 +341,10 @@ btnResult.onmouseup = function() {
 // Button [+] Addition
 let btnPlus = document.getElementById("btn-plus");
 btnPlus.onmouseup = function() {
-  if (lastButtonResult === true || lastButtonNumber === false) {
+  if (lastButtonResult === true || lastButtonNumber === false || lastButtonCE === true) {
     usedValue = Number(screen.textContent);
+  } else if (usedValue === 0 && lastButtonNumber === true) {
+    usedValue = Number(firstValue);
   } else if (currentExpression === "btnMinus") {
     usedValue -= Number(firstValue);
   } else if (currentExpression === "btnX") {
@@ -347,11 +354,12 @@ btnPlus.onmouseup = function() {
   } else {
     usedValue += Number(firstValue);
   }
+
   screen.textContent = usedValue;
   currentExpression = "btnPlus";
   lastButtonResult = false;
   lastButtonNumber = false;
-  lastButtonCE = false;
+  resetUsedValue = true;
 
   buttonsUsed += "+";
   console.clear();
@@ -365,7 +373,7 @@ btnPlus.onmouseup = function() {
 // Button [-] Subtraction
 let btnMinus = document.getElementById("btn-minus");
 btnMinus.onmouseup = function() {
-  if (lastButtonResult === true || lastButtonNumber === false) {
+  if (lastButtonResult === true || lastButtonNumber === false || lastButtonCE === true) {
     usedValue = Number(screen.textContent);
   } else if (usedValue === 0 && lastButtonNumber === true) {
     usedValue = Number(firstValue);
@@ -378,11 +386,12 @@ btnMinus.onmouseup = function() {
   } else {
     usedValue -= Number(firstValue);
   }
+
   screen.textContent = usedValue;
   currentExpression = "btnMinus";
   lastButtonResult = false;
   lastButtonNumber = false;
-  lastButtonCE = false;
+  resetUsedValue = true;
 
   buttonsUsed += "-";
   console.clear();
@@ -396,7 +405,7 @@ btnMinus.onmouseup = function() {
 // Button [x] Multiplication
 let btnX = document.getElementById("btn-x");
 btnX.onmouseup = function() {
-  if (lastButtonResult === true || lastButtonNumber === false) {
+  if (lastButtonResult === true || lastButtonNumber === false || lastButtonCE === true) {
     usedValue = Number(screen.textContent);
   } else if (usedValue === 0 && lastButtonNumber === true) {
     usedValue = Number(firstValue);
@@ -409,11 +418,12 @@ btnX.onmouseup = function() {
   } else {
     usedValue *= (Number(firstValue));
   }
+
   screen.textContent = usedValue;
   currentExpression = "btnX";
   lastButtonResult = false;
   lastButtonNumber = false;
-  lastButtonCE = false;
+  resetUsedValue = true;
 
   buttonsUsed += "x";
   console.clear();
@@ -427,7 +437,7 @@ btnX.onmouseup = function() {
 // Button [/] Division
 let btnDivision = document.getElementById("btn-division");
 btnDivision.onmouseup = function() {
-  if (lastButtonResult === true || lastButtonNumber === false) {
+  if (lastButtonResult === true || lastButtonNumber === false || lastButtonCE === true) {
     usedValue = Number(screen.textContent);
   } else if (usedValue === 0 && lastButtonNumber === true) {
     usedValue = Number(firstValue);
@@ -440,11 +450,12 @@ btnDivision.onmouseup = function() {
   } else {
     usedValue /= (Number(firstValue));
   }
+
   screen.textContent = usedValue;
   currentExpression = "btnDivision";
   lastButtonResult = false;
   lastButtonNumber = false;
-  lastButtonCE = false;
+  resetUsedValue = true;
 
   buttonsUsed += "/";
   console.clear();
@@ -461,6 +472,7 @@ btnCE.onmouseup = function() {
   firstValue = "0";
   screen.textContent = 0;
   result = 0;
+  resetUsedValue = false;
   lastButtonCE = true;
 
   buttonsUsed += "[CE]";
